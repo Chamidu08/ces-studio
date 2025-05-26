@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support - CES STUDIO</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      font-size: 2rem;
+      padding: 20px;
+      color: #00ffd5;
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #00ffd5;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .support-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+    }
+
+    .support-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffd5;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffd5;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+    }
+
+    .whatsapp-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .whatsapp-link a {
+      color: #00ffd5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>CES STUDIO</header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./services.html">Services</a>
+    <a href="./order.html">Order</a>
+    <a href="./support.html">Support</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+
+  <div class="support-container">
+    <h2>Need Help?</h2>
+    <form onsubmit="sendSupport(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" required />
+
+      <label for="message">How can we help?</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <button type="submit">Contact Support via WhatsApp</button>
+    </form>
+
+    <div class="whatsapp-link">
+      <p>Or directly message us on <a href="https://wa.me/94763956009" target="_blank">WhatsApp</a></p>
+    </div>
+  </div>
+
+  <script>
+    function sendSupport(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const whatsappMsg = `Hi CES STUDIO Support! 👋\n\n🧑 Name: ${name}\n📧 Email: ${email}\n🆘 Issue: ${message}`;
+      const phone = "94763956009";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMsg)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>

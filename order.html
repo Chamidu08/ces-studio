@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order - CES STUDIO</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      font-size: 2rem;
+      padding: 20px;
+      color: #00ffd5;
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #00ffd5;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .order-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+    }
+
+    .order-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffd5;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffd5;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+    }
+  </style>
+</head>
+<body>
+  <header>CES STUDIO</header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./services.html">Services</a>
+    <a href="./order.html">Order</a>
+    <a href="./support.html">Support</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+
+  <div class="order-container">
+    <h2>Place Your Order</h2>
+    <form onsubmit="sendOrder(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" required />
+
+      <label for="service">Select Service</label>
+      <select id="service" required>
+        <option value="" disabled selected>Choose one</option>
+        <option value="Logo Design">Logo Design</option>
+        <option value="Thumbnail Design">Thumbnail Design</option>
+        <option value="Photo Editing">Photo Editing</option>
+      </select>
+
+      <label for="details">Project Details</label>
+      <textarea id="details" rows="4" required></textarea>
+
+      <button type="submit">Order via WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    function sendOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const service = document.getElementById('service').value;
+      const details = document.getElementById('details').value;
+
+      const message = `Hi CES STUDIO! 👋\n\nI would like to order a *${service}*.\n\n👤 Name: ${name}\n📧 Email: ${email}\n📝 Details: ${details}`;
+      const phone = "94763956009";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CES STUDIO - Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .service-card {
+      background-color: #1f1f1f;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 213, 0.3);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 255, 213, 0.6);
+    }
+
+    .service-card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #00ffd5;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .service-card button {
+      background-color: #00ffd5;
+      border: none;
+      padding: 10px 20px;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .service-card button:hover {
+      background-color: #00bfa6;
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #00ffd5;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      font-size: 2rem;
+      padding: 20px;
+      color: #00ffd5;
+    }
+  </style>
+</head>
+<body>
+  <header>CES STUDIO</header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./services.html">Services</a>
+    <a href="./order.html">Order</a>
+    <a href="./support.html">Support</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+
+  <div class="services-container">
+    <div class="service-card">
+      <img src="C:\Users\Sithira\Desktop\ces_studio_website (1)\1.jpg" alt="Logo Design" />
+      <h3>Logo Design</h3>
+      <p>Create unique, modern logos for your brand or business.</p>
+      <button onclick="order('Logo Design')">Order Now</button>
+    </div>
+    <div class="service-card">
+      <img src="C:\Users\Sithira\Desktop\ces_studio_website (1)\2.jpg" alt="Thumbnail Design" />
+      <h3>Thumbnail Design</h3>
+      <p>Eye-catching thumbnails for YouTube or social media.</p>
+      <button onclick="order('Thumbnail Design')">Order Now</button>
+    </div>
+    <div class="service-card">
+      <img src="C:\Users\Sithira\Desktop\ces_studio_website (1)\3.jpeg" alt="Photo Editing" />
+      <h3>Photo Editing</h3>
+      <p>Professional photo retouching and enhancement.</p>
+      <button onclick="order('Photo Editing')">Order Now</button>
+    </div>
+  </div>
+
+  <script>
+    function order(serviceName) {
+      const whatsappNumber = "94763956009";
+      const message = `Hi CES STUDIO! I want to order your *${serviceName}* service. Please share more details.`;
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>

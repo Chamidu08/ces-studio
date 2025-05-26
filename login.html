@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CES STUDIO - Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .login-box {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 213, 0.5);
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffd5;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffd5;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background-color: #00bfa6;
+    }
+    .login-box .message {
+      margin-top: 15px;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>CES STUDIO</header>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Login</a>
+    <a href="./services.html">Services</a>
+    <a href="./order.html">Order</a>
+    <a href="./support.html">Support</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <input type="password" id="password" placeholder="Enter your password" required />
+    <button onclick="storeLogin()">Login</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function storeLogin() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (email && password) {
+        localStorage.setItem('ces_user_email', email);
+        localStorage.setItem('ces_user_password', password);
+        document.getElementById('message').innerText = 'Login saved locally!';
+      } else {
+        document.getElementById('message').innerText = 'Please fill both fields.';
+      }
+    }
+  </script>
+</body>
+</html>
